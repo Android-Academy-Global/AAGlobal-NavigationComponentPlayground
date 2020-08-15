@@ -10,6 +10,10 @@ import kotlinx.coroutines.launch
 
 class SplashViewModel : ViewModel() {
 
+    companion object {
+        private const val SPLASH_DELAY_IN_MS = 1500L
+    }
+
     private val _isInProgress = MutableLiveData(true)
 
     val isInProgress: LiveData<Boolean> = _isInProgress
@@ -18,7 +22,7 @@ class SplashViewModel : ViewModel() {
     init {
         // Add special delay for splash screen
         viewModelScope.launch {
-            delay(2000L)
+            delay(SPLASH_DELAY_IN_MS)
             _isInProgress.value = false
         }
     }

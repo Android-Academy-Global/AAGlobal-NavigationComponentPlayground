@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/company_flow__nav_graph"
+    app:startDestination="@id/CompanyFragment">
+
+    <fragment
+        android:id="@+id/CompanyFragment"
+        android:name="com.aaglobal.jnc_playground.ui.company.CompanyFragment"
+        android:label="@string/fragment_company__title"
+        tools:layout="@layout/fragment_company">
+
+        <action
+            android:id="@+id/action__CompanyFragment__to__CompanyDetailsFragment"
+            app:destination="@id/CompanyDetailsFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/CompanyDetailsFragment"
+        android:name="com.aaglobal.jnc_playground.ui.company.CompanyDetailsFragment"
+        android:label="@string/fragment_company_details__title"
+        tools:layout="@layout/fragment_company_details">
+
+        <!-- We can use this action for back navigation, but it seems that it is -->
+        <!-- not semantically right to use "navigate" word if you return to some screen -->
+        <action
+            android:id="@+id/action__finishCompanyFlow"
+            app:popUpTo="@id/company_flow__nav_graph"
+            app:popUpToInclusive="true" />
+
+    </fragment>
+
+</navigation>
