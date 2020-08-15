@@ -15,11 +15,24 @@
         android:id="@+id/navigation_dashboard"
         android:name="com.aaglobal.jnc_playground.ui.dashboard.DashboardFragment"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_dashboard">
+
+        <action
+            android:id="@+id/action__DashboardFragment_to_GraphicFragment"
+            app:destination="@id/GraphicFragment" />
+
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_notifications"
         android:name="com.aaglobal.jnc_playground.ui.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/GraphicFragment"
+        android:name="com.aaglobal.jnc_playground.ui.graphic.GraphicFragment"
+        android:label="Graphic"
+        tools:layout="@layout/fragment_graphic" />
+
 </navigation>

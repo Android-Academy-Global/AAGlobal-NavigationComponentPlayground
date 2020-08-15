@@ -32,4 +32,14 @@
         app:layout_constraintTop_toBottomOf="@id/fragment_dashboard__text__title"
         tools:text="100" />
 
+    <Button
+        android:id="@+id/fragment_dashboard__button__move"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp20"
+        android:text="@string/fragment_dashboard__open_graphic_screen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragment_dashboard__text__counter" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

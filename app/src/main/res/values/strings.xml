@@ -3,4 +3,6 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="fragment_graphic__title">Graphic screen title</string>
+    <string name="fragment_dashboard__open_graphic_screen">Open graphic screen</string>
 </resources>
