@@ -21,6 +21,14 @@
     <fragment
         android:id="@+id/MainFragment"
         android:name="com.aaglobal.jnc_playground.ui.main.MainFragment"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_main">
+
+        <action
+            android:id="@+id/action__MainFragment__to__AuthFlow"
+            app:destination="@id/auth__nav_graph" />
+
+    </fragment>
+
+    <include app:graph="@navigation/auth__nav_graph" />
 
 </navigation>

@@ -8,14 +8,8 @@
     <fragment
         android:id="@+id/ProfileContainerFragment"
         android:name="com.aaglobal.jnc_playground.ui.tabs.profile.ProfileContainerFragment"
-        tools:layout="@layout/fragment_profile_container">
+        tools:layout="@layout/fragment_profile_container" />
 
-        <action
-            android:id="@+id/action__ProfileContainerFragment__to__AuthFlow"
-            app:destination="@id/auth__nav_graph" />
-
-    </fragment>
-
-    <include app:graph="@navigation/auth__nav_graph" />
+    <include app:graph="@navigation/app_nav_graph"/>
 
 </navigation>

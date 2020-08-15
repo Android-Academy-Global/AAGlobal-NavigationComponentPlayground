@@ -14,7 +14,7 @@ class ProfileContainerFragment : Fragment(R.layout.fragment_profile_container) {
         super.onViewCreated(view, savedInstanceState)
 
         fragment_profile_container__button__open_auth_flow.setOnClickListener {
-            findNavController().navigate(R.id.action__ProfileContainerFragment__to__AuthFlow)
+            findNavController().navigate(R.id.action__MainFragment__to__AuthFlow)
         }
     }
 
