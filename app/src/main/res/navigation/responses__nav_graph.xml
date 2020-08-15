@@ -10,6 +10,12 @@
         android:name="com.aaglobal.jnc_playground.ui.tabs.responses.ResponsesContainerFragment"
         tools:layout="@layout/fragment_responses_container">
 
+        <action
+            android:id="@+id/action__ResponsesContainerFragment__to__CompanyFlow"
+            app:destination="@id/company_flow__nav_graph" />
+
     </fragment>
+
+    <include app:graph="@navigation/company_flow__nav_graph" />
 
 </navigation>

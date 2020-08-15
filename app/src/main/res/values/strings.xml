@@ -2,7 +2,7 @@
     <string name="app_name">JetpackNavigationComponentPlayground</string>
 
     <!-- region Common -->
-    <string name="open_company_flow">Open company flow</string>
+    <string name="common__open_company_flow">Open company flow</string>
     <!-- endregion -->
 
     <!-- region Bottom navigation -->
