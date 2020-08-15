@@ -24,7 +24,11 @@ class CompanyDetailsFragment : Fragment(R.layout.fragment_company_details) {
          * Such method allows us don't think about propagating "start" screen @id
          */
         fragment_company_details__button.setOnClickListener {
+            // Here we are inside nested navigation flow
             findNavController().popBackStack(R.id.company_flow__nav_graph, true)
+
+            // At this line, "findNavController().currentBackStackEntry" means screen that STARTED current nested flow.
+            // So we can send result!
             findNavController().currentBackStackEntry?.savedStateHandle?.set(COMPANY_FLOW_RESULT_FLAG, true)
         }
     }

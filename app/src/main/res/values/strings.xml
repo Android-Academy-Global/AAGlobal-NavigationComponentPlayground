@@ -18,6 +18,7 @@
 
     <!-- region Fragment <Search container> -->
     <string name="fragment_search_container__title">Search container</string>
+    <string name="fragment_search_container__company_flow_result">Company flow result: %1$s</string>
     <!-- endregion -->
 
     <!-- region Fragment <Favorites container> -->
