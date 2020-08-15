@@ -1,8 +1,30 @@
 <resources>
     <string name="app_name">JetpackNavigationComponentPlayground</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
-    <string name="fragment_graphic__title">Graphic screen title</string>
-    <string name="fragment_dashboard__open_graphic_screen">Open graphic screen</string>
+
+    <!-- region Bottom navigation -->
+    <string name="main_bottom_navigation__search">Search</string>
+    <string name="main_bottom_navigation__favorites">Favorites</string>
+    <string name="main_bottom_navigation__responses">Responses</string>
+    <string name="main_bottom_navigation__profile">Profile</string>
+    <!-- endregion -->
+
+    <!-- region Fragment <Splash> -->
+    <string name="fragment_splash__title">Splash screen</string>
+    <!-- endregion -->
+
+    <!-- region Fragment <Search container> -->
+    <string name="fragment_search_container__title">Search container</string>
+    <!-- endregion -->
+
+    <!-- region Fragment <Favorites container> -->
+    <string name="fragment_favorites_container__title">Favorites container</string>
+    <!-- endregion -->
+
+    <!-- region Fragment <Responses container> -->
+    <string name="fragment_responses_container__title">Responses container</string>
+    <!-- endregion -->
+
+    <!-- region Fragment <Profile container> -->
+    <string name="fragment_profile_container__title">Profile container</string>
+    <!-- endregion -->
 </resources>

@@ -5,11 +5,12 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/fragment_responses_container__text__title"
         style="@style/LargeTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/fragment_graphic__title"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="@dimen/dp20"
+        android:text="@string/fragment_responses_container__title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
