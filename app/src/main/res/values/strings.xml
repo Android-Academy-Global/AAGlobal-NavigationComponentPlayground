@@ -34,10 +34,18 @@
 
     <!-- endregion -->
 
-    <!-- Nested navigation flow -->
+    <!-- region Nested navigation flow -->
     <string name="fragment_company__title">Company screen</string>
     <string name="fragment_company__move_to_details">Move to details</string>
     <string name="fragment_company_details__title">Company details</string>
     <string name="fragment_company_details__finish_flow">Finish flow</string>
     <!-- endregion -->
+
+    <!-- region Auth flow -->
+    <string name="fragment_start_auth__title">Start auth</string>
+    <string name="fragment_start_auth__open_next_screen">Open next auth screen</string>
+    <string name="fragment_finish_auth__title">Finish auth screen</string>
+    <string name="fragment_finish_auth__finish_flow">Finish auth flow</string>
+    <!-- endregion -->
+
 </resources>

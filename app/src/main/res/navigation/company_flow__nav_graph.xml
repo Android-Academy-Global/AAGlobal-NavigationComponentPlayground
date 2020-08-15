@@ -24,7 +24,7 @@
         tools:layout="@layout/fragment_company_details">
 
         <!-- We can use this action for back navigation, but it seems that it is -->
-        <!-- not semantically right to use "navigate" word if you return to some screen -->
+        <!-- not semantically right to use "navigate" word when you return to some screen -->
         <action
             android:id="@+id/action__finishCompanyFlow"
             app:popUpTo="@id/company_flow__nav_graph"
