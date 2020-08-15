@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.JetpackNavigationComponentPlayground">
         <activity
-            android:name=".MainActivity"
+            android:name=".RootActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
