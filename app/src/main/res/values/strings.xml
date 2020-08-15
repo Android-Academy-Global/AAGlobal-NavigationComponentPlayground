@@ -46,6 +46,7 @@
     <string name="fragment_start_auth__open_next_screen">Open next auth screen</string>
     <string name="fragment_finish_auth__title">Finish auth screen</string>
     <string name="fragment_finish_auth__finish_flow">Finish auth flow</string>
+    <string name="fragment_profile_container__open_auth_flow">Open auth flow</string>
     <!-- endregion -->
 
 </resources>
