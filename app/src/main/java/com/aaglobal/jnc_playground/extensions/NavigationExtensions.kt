@@ -1,6 +1,7 @@
 package com.aaglobal.jnc_playground.extensions
 
 import android.content.Intent
+import android.os.Handler
 import android.util.SparseArray
 import androidx.core.util.forEach
 import androidx.core.util.set
@@ -77,8 +78,10 @@ fun BottomNavigationView.setupWithNavController(
             val newlySelectedItemTag = graphIdToTagMap[item.itemId]
             if (selectedItemTag != newlySelectedItemTag) {
                 // Pop everything above the first fragment (the "fixed start destination")
-                fragmentManager.popBackStack(firstFragmentTag,
-                    FragmentManager.POP_BACK_STACK_INCLUSIVE)
+                fragmentManager.popBackStack(
+                    firstFragmentTag,
+                    FragmentManager.POP_BACK_STACK_INCLUSIVE
+                )
                 val selectedFragment = fragmentManager.findFragmentByTag(newlySelectedItemTag)
                         as NavHostFragment
 
@@ -91,7 +94,8 @@ fun BottomNavigationView.setupWithNavController(
                             R.anim.nav_default_enter_anim,
                             R.anim.nav_default_exit_anim,
                             R.anim.nav_default_pop_enter_anim,
-                            R.anim.nav_default_pop_exit_anim)
+                            R.anim.nav_default_pop_exit_anim
+                        )
                         .attach(selectedFragment)
                         .setPrimaryNavigationFragment(selectedFragment)
                         .apply {
@@ -157,7 +161,8 @@ private fun BottomNavigationView.setupDeepLinks(
         )
         // Handle Intent
         if (navHostFragment.navController.handleDeepLink(intent)
-            && selectedItemId != navHostFragment.navController.graph.id) {
+            && selectedItemId != navHostFragment.navController.graph.id
+        ) {
             this.selectedItemId = navHostFragment.navController.graph.id
         }
     }
@@ -183,9 +188,13 @@ private fun detachNavHostFragment(
     fragmentManager: FragmentManager,
     navHostFragment: NavHostFragment
 ) {
-    fragmentManager.beginTransaction()
-        .detach(navHostFragment)
-        .commitNow()
+    // Fix for crash on folding-unfolding app
+    // java.lang.IllegalStateException: FragmentManager is already executing transactions
+    Handler().post {
+        fragmentManager.beginTransaction()
+            .detach(navHostFragment)
+            .commitNow()
+    }
 }
 
 private fun attachNavHostFragment(
@@ -193,15 +202,18 @@ private fun attachNavHostFragment(
     navHostFragment: NavHostFragment,
     isPrimaryNavFragment: Boolean
 ) {
-    fragmentManager.beginTransaction()
-        .attach(navHostFragment)
-        .apply {
-            if (isPrimaryNavFragment) {
-                setPrimaryNavigationFragment(navHostFragment)
+    // Fix for crash on folding-unfolding app
+    // java.lang.IllegalStateException: FragmentManager is already executing transactions
+    Handler().post {
+        fragmentManager.beginTransaction()
+            .attach(navHostFragment)
+            .apply {
+                if (isPrimaryNavFragment) {
+                    setPrimaryNavigationFragment(navHostFragment)
+                }
             }
-        }
-        .commitNow()
-
+            .commitNow()
+    }
 }
 
 private fun obtainNavHostFragment(
