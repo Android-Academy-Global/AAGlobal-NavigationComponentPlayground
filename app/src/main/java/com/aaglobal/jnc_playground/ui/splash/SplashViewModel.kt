@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 class SplashViewModel : ViewModel() {
 
     companion object {
-        private const val SPLASH_DELAY_IN_MS = 5000L
+        private const val SPLASH_DELAY_IN_MS = 1500L
     }
 
 

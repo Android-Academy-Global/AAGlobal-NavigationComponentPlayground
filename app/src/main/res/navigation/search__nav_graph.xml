@@ -10,6 +10,9 @@
         android:name="com.aaglobal.jnc_playground.ui.tabs.search.SearchContainerFragment"
         tools:layout="@layout/fragment_search_container">
 
+        <!-- Deep link for the first bottom navigation tab -->
+        <deepLink app:uri="www.example.com/main" />
+
         <action
             android:id="@+id/action__SearchContainerFragment__to__CompanyFlow"
             app:destination="@id/company_flow__nav_graph" />
