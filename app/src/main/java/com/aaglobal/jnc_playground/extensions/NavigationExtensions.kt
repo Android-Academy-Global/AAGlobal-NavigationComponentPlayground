@@ -1,7 +1,6 @@
 package com.aaglobal.jnc_playground.extensions
 
 import android.content.Intent
-import android.os.Handler
 import android.util.SparseArray
 import androidx.core.util.forEach
 import androidx.core.util.set
@@ -188,13 +187,10 @@ private fun detachNavHostFragment(
     fragmentManager: FragmentManager,
     navHostFragment: NavHostFragment
 ) {
-    // Fix for crash on folding-unfolding app
-    // java.lang.IllegalStateException: FragmentManager is already executing transactions
-    Handler().post {
-        fragmentManager.beginTransaction()
-            .detach(navHostFragment)
-            .commitNow()
-    }
+    // We don't need Handler().post {} here anymore because we wrap all of bottom navigation setup logic into Handler().post { }
+    fragmentManager.beginTransaction()
+        .detach(navHostFragment)
+        .commitNow()
 }
 
 private fun attachNavHostFragment(
@@ -202,18 +198,15 @@ private fun attachNavHostFragment(
     navHostFragment: NavHostFragment,
     isPrimaryNavFragment: Boolean
 ) {
-    // Fix for crash on folding-unfolding app
-    // java.lang.IllegalStateException: FragmentManager is already executing transactions
-    Handler().post {
-        fragmentManager.beginTransaction()
-            .attach(navHostFragment)
-            .apply {
-                if (isPrimaryNavFragment) {
-                    setPrimaryNavigationFragment(navHostFragment)
-                }
+    // We don't need Handler().post {} here anymore because we wrap all of bottom navigation setup logic into Handler().post { }
+    fragmentManager.beginTransaction()
+        .attach(navHostFragment)
+        .apply {
+            if (isPrimaryNavFragment) {
+                setPrimaryNavigationFragment(navHostFragment)
             }
-            .commitNow()
-    }
+        }
+        .commitNow()
 }
 
 private fun obtainNavHostFragment(

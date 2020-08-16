@@ -1,6 +1,7 @@
 package com.aaglobal.jnc_playground.ui.main
 
 import android.os.Bundle
+import android.os.Handler
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LiveData
@@ -24,17 +25,23 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         // Now that BottomNavigationBar has restored its instance state
         // and its selectedItemId, we can proceed with setting up the
         // BottomNavigationBar with Navigation
-        setupBottomNavigationBar()
+        safeSetupBottomNavigationBar()
     }
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         if (savedInstanceState == null) {
-            setupBottomNavigationBar()
+            safeSetupBottomNavigationBar()
         }
     }
 
+    private fun safeSetupBottomNavigationBar() {
+        // Fix for java.lang.IllegalStateException: FragmentManager is already executing transactions
+        // on launching adb command with deep link
+        Handler().post {
+            setupBottomNavigationBar()
+        }
+    }
 
     /**
      * Called on first creation and when restoring state.
