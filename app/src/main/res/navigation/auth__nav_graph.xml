@@ -11,6 +11,12 @@
         android:label="Start auth"
         tools:layout="@layout/fragment_start_auth">
 
+        <argument
+            android:name="isFromSplashScreen"
+            android:defaultValue="false"
+            app:argType="boolean"
+            app:nullable="false" />
+
         <action
             android:id="@+id/action__StartAuthFragment__to__FinishAuthFragment"
             app:destination="@id/FinishAuthFragment" />

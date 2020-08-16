@@ -16,6 +16,12 @@
             app:popUpTo="@id/SplashFragment"
             app:popUpToInclusive="true" />
 
+        <!-- No popUpTo, because I build my forward navigation logic on Splash screen -->
+        <!-- So, I need to store splash screen in back stack -->
+        <action
+            android:id="@+id/action__SplashFragment__to__AuthFlow"
+            app:destination="@id/auth__nav_graph" />
+
     </fragment>
 
     <fragment
