@@ -3,6 +3,7 @@
 
     <!-- region Common -->
     <string name="common__open_company_flow">Open company flow</string>
+    <string name="common__open_vacancy_screen">Open vacancy screen</string>
     <!-- endregion -->
 
     <!-- region Bottom navigation -->
@@ -47,6 +48,13 @@
     <string name="fragment_finish_auth__title">Finish auth screen</string>
     <string name="fragment_finish_auth__finish_flow">Finish auth flow</string>
     <string name="fragment_profile_container__open_auth_flow">Open auth flow</string>
+    <!-- endregion -->
+
+    <!-- region Fragment <Vacancy> -->
+    <string name="fragment_vacancy__title">Vacancy [id: %1$s]</string>
+    <string name="fragment_vacancy__open_next_vacancy">Open next vacancy</string>
+
+    <string name="fragment_vacancy_list__item__name">%1$s | id: %2$s</string>
     <!-- endregion -->
 
 </resources>

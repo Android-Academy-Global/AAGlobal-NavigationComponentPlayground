@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/vacancy_nav_graph"
+    app:startDestination="@id/VacancyFragment">
+
+    <fragment
+        android:id="@+id/VacancyFragment"
+        android:name="com.aaglobal.jnc_playground.ui.vacancy.VacancyFragment"
+        android:label="Fragment vacancy"
+        tools:layout="@layout/fragment_vacancy">
+
+        <argument
+            android:name="vacancyId"
+            app:argType="string"
+            app:nullable="false" />
+
+        <action
+            android:id="@+id/action__VacancyFragment__to__VacancyFragment"
+            app:destination="@id/VacancyFragment" />
+
+    </fragment>
+
+</navigation>
