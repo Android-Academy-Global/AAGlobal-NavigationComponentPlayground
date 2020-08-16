@@ -27,10 +27,11 @@ object Libs {
 
     object UI {
         private const val materialComponentsVersion = "1.1.0"
-
+        private const val adapterDelegateVersion = "4.3.0"
 
         const val materialComponents = "com.google.android.material:material:$materialComponentsVersion"
-
+        const val adapterDelegateKotlinDsl = "com.hannesdorfmann:adapterdelegates4-kotlin-dsl:$adapterDelegateVersion"
+        const val adapterDelegateKotlinDslLayoutContainer = "com.hannesdorfmann:adapterdelegates4-kotlin-dsl-layoutcontainer:$adapterDelegateVersion"
     }
 
     object AndroidX {

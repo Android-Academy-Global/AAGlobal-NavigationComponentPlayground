@@ -41,6 +41,10 @@ android {
     }
 }
 
+androidExtensions {
+    isExperimental = true
+}
+
 dependencies {
     // Kotlin
     implementation(Libs.kotlin)
@@ -56,6 +60,8 @@ dependencies {
     // Navigation
     implementation(Libs.jetpack.navigationComponentFragmentKtx)
     implementation(Libs.jetpack.navigationComponentUiKtx)
+    implementation(Libs.ui.adapterDelegateKotlinDsl)
+    implementation(Libs.ui.adapterDelegateKotlinDslLayoutContainer)
 
     testImplementation(Libs.test.junit)
     androidTestImplementation(Libs.test.junitExt)

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/item_vacancy__container"
+    android:layout_height="wrap_content"
+    android:foreground="?selectableItemBackground">
+
+    <TextView
+        android:id="@+id/item_vacancy__text__name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp20"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Vacancy name" />
+
+    <View
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:background="@color/purple_200"
+        android:layout_height="0.7dp"/>
+
+</FrameLayout>
