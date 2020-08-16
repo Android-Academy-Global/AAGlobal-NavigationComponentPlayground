@@ -36,12 +36,7 @@
 
     <!-- endregion -->
 
-    <!-- region Nested navigation flow -->
-    <string name="fragment_company__title">Company screen</string>
-    <string name="fragment_company__move_to_details">Move to details</string>
-    <string name="fragment_company_details__title">Company details</string>
-    <string name="fragment_company_details__finish_flow">Finish flow</string>
-    <!-- endregion -->
+
 
     <!-- region Auth flow -->
     <string name="fragment_start_auth__title">Start auth</string>
@@ -65,8 +60,6 @@
     <string name="dialog_a_bottom_sheet__go_to_next_screen">Go to next screen</string>
     <string name="dialog_b_bottom_sheet__title">Dialog (B)</string>
     <string name="dialog_b_bottom_sheet__close_current_dialog">Close current dialog</string>
-
-
     <!-- endregion -->
 
 </resources>

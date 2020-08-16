@@ -6,7 +6,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.aaglobal.jnc_playground.R
 import com.aaglobal.jnc_playground.core.utils.addFragmentLossIfNotExist
-import com.aaglobal.jnc_playground.ui.company.CompanyDetailsFragment
+import com.aaglobal.jnc_playground.company.CompanyDetailsFragment
 import com.aaglobal.jnc_playground.ui.vacancy.VacancyFragmentArgs
 import com.aaglobal.jnc_playground.ui.vacancy_list.VacancyListFragment
 import com.aaglobal.jnc_playground.ui.vacancy_list.VacancyListRouterSource

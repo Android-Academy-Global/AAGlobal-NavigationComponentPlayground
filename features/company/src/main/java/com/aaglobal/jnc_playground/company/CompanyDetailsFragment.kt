@@ -1,4 +1,4 @@
-package com.aaglobal.jnc_playground.ui.company
+package com.aaglobal.jnc_playground.company
 
 import android.os.Bundle
 import android.view.View

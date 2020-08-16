@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- region Nested navigation flow -->
+    <string name="fragment_company__title">Company screen</string>
+    <string name="fragment_company__move_to_details">Move to details</string>
+    <string name="fragment_company_details__title">Company details</string>
+    <string name="fragment_company_details__finish_flow">Finish flow</string>
+    <!-- endregion -->
+
+</resources>
