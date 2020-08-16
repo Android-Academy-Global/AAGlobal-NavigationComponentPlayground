@@ -2,37 +2,36 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/fragment_favorites_container__text__title"
+        android:id="@+id/dialog_b_bottom_sheet__text__title"
         style="@style/LargeTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/dp20"
-        android:text="@string/fragment_favorites_container__title"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/dialog_b_bottom_sheet__title"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <View
+        android:id="@+id/dialog_b_bottom_sheet__view__content"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_margin="@dimen/dp20"
+        android:background="@color/purple_200"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dialog_b_bottom_sheet__text__title" />
+
     <Button
-        android:id="@+id/fragment_favorites_container__button__open_dialogs"
+        android:id="@+id/dialog_b_bottom_sheet__button__return"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/dp20"
-        android:text="@string/fragment_favorites_container__open_first_dialog"
+        android:text="@string/dialog_b_bottom_sheet__close_current_dialog"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/fragment_favorites_container__text__title" />
-
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragment_favorites_container__container__recommend_vacancies"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="@dimen/dp20"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/fragment_favorites_container__button__open_dialogs" />
+        app:layout_constraintTop_toBottomOf="@id/dialog_b_bottom_sheet__view__content" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

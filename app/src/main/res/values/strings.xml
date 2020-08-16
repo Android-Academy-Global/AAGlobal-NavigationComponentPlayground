@@ -24,6 +24,7 @@
 
     <!-- region Fragment <Favorites container> -->
     <string name="fragment_favorites_container__title">Favorites container</string>
+    <string name="fragment_favorites_container__open_first_dialog">Open first dialog</string>
     <!-- endregion -->
 
     <!-- region Fragment <Responses container> -->
@@ -55,6 +56,17 @@
     <string name="fragment_vacancy__open_next_vacancy">Open next vacancy</string>
 
     <string name="fragment_vacancy_list__item__name">%1$s | id: %2$s</string>
+    <!-- endregion -->
+
+    <!-- region Dialogs -->
+    <string name="dialog_a_bottom_sheet__counter">Counter: %1$d</string>
+    <string name="dialog_a_bottom_sheet__title">Dialog (A)</string>
+    <string name="dialog_a_bottom_sheet__increase_counter">Increase counter</string>
+    <string name="dialog_a_bottom_sheet__go_to_next_screen">Go to next screen</string>
+    <string name="dialog_b_bottom_sheet__title">Dialog (B)</string>
+    <string name="dialog_b_bottom_sheet__close_current_dialog">Close current dialog</string>
+
+
     <!-- endregion -->
 
 </resources>

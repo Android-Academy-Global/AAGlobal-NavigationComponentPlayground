@@ -14,7 +14,35 @@
             android:id="@+id/action__FavoritesContainerFragment__to__VacancyFragment"
             app:destination="@id/vacancy_nav_graph" />
 
+        <action
+            android:id="@+id/action__FavoritesContainerFragment__to__ABottomSheet"
+            app:destination="@id/ABottomSheet" />
+
     </fragment>
+
+    <dialog
+        android:id="@+id/ABottomSheet"
+        android:name="com.aaglobal.jnc_playground.ui.dialogs.dialog_a.ABottomSheetDialog">
+
+        <action
+            android:id="@+id/action__ABottomSheet__to__BBottomSheet"
+            app:destination="@id/BBottomSheet"
+            app:popUpTo="@id/ABottomSheet"
+            app:popUpToInclusive="true" />
+
+    </dialog>
+
+    <dialog
+        android:id="@+id/BBottomSheet"
+        android:name="com.aaglobal.jnc_playground.ui.dialogs.dialog_b.BBottomSheetDialog">
+
+        <action
+            android:id="@+id/action__BBottomSheet__to__ABottomSheet"
+            app:destination="@id/ABottomSheet"
+            app:popUpTo="@id/BBottomSheet"
+            app:popUpToInclusive="true" />
+
+    </dialog>
 
     <include app:graph="@navigation/vacancy_nav_graph" />
 

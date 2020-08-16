@@ -10,6 +10,7 @@ import com.aaglobal.jnc_playground.ui.vacancy.VacancyFragmentArgs
 import com.aaglobal.jnc_playground.ui.vacancy_list.VacancyListFragment
 import com.aaglobal.jnc_playground.ui.vacancy_list.VacancyListRouterSource
 import com.aaglobal.jnc_playground.ui.vacancy_list.adapter.VacancyItem
+import kotlinx.android.synthetic.main.fragment_favorites_container.*
 
 
 class FavoritesContainerFragment : Fragment(R.layout.fragment_favorites_container) {
@@ -17,6 +18,9 @@ class FavoritesContainerFragment : Fragment(R.layout.fragment_favorites_containe
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        fragment_favorites_container__button__open_dialogs.setOnClickListener {
+            findNavController().navigate(R.id.action__FavoritesContainerFragment__to__ABottomSheet)
+        }
         addVacancyListFragment()
     }
 
