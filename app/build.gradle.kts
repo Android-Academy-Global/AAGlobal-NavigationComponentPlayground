@@ -63,6 +63,9 @@ dependencies {
     implementation(Libs.ui.adapterDelegateKotlinDsl)
     implementation(Libs.ui.adapterDelegateKotlinDslLayoutContainer)
 
+    // Core modules
+    implementation(project(":common-navigation"))
+
     // Feature modules
     implementation(project(":company"))
     implementation(project(":vacancy"))

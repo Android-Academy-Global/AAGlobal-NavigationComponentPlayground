@@ -7,8 +7,7 @@
 
     <fragment
         android:id="@+id/ResponsesContainerFragment"
-        android:name="com.aaglobal.jnc_playground.ui.tabs.responses.ResponsesContainerFragment"
-        tools:layout="@layout/fragment_responses_container">
+        android:name="com.aaglobal.jnc_playground.ui.tabs.responses.ResponsesContainerFragment">
 
         <action
             android:id="@+id/action__ResponsesContainerFragment__to__CompanyFlow"

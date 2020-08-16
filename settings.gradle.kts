@@ -1,6 +1,11 @@
 // Application modules
 include(":app")
 
+// Core modules
+include(":common-navigation")
+
+project(":common-navigation").projectDir = File(settingsDir, "core/common-navigation")
+
 // Feature modules
 include(":company")
 include(":vacancy")

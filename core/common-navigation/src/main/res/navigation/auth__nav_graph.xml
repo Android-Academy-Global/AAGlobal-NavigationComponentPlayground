@@ -8,8 +8,7 @@
     <fragment
         android:id="@+id/StartAuthFragment"
         android:name="com.aaglobal.jnc_playground.ui.auth.StartAuthFragment"
-        android:label="Start auth"
-        tools:layout="@layout/fragment_start_auth">
+        android:label="Start auth">
 
         <argument
             android:name="isFromSplashScreen"
@@ -26,7 +25,6 @@
     <fragment
         android:id="@+id/FinishAuthFragment"
         android:name="com.aaglobal.jnc_playground.ui.auth.FinishAuthFragment"
-        android:label="Finish auth"
-        tools:layout="@layout/fragment_finish_auth" />
+        android:label="Finish auth" />
 
 </navigation>

@@ -1,7 +1,6 @@
 plugins {
     id("com.android.library")
     kotlin("android")
-    kotlin("android.extensions")
     id("androidx.navigation.safeargs.kotlin")
 }
 
@@ -39,26 +38,7 @@ android {
     }
 }
 
-androidExtensions {
-    isExperimental = true
-}
-
 dependencies {
-    // Core modules
-    implementation(project(":common-navigation"))
-
-    // Kotlin
-    compileOnly(Libs.kotlin)
-
-    // AndroidX
-    compileOnly(Libs.androidX.coreKtx)
-    compileOnly(Libs.androidX.appCompat)
-
-    // UI libraries
-    compileOnly(Libs.ui.materialComponents)
-    compileOnly(Libs.androidX.constraintLayout)
-
     // Navigation
     compileOnly(Libs.jetpack.navigationComponentFragmentKtx)
-    compileOnly(Libs.jetpack.navigationComponentUiKtx)
 }

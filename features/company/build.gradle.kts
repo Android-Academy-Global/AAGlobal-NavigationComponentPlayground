@@ -43,6 +43,9 @@ androidExtensions {
 }
 
 dependencies {
+    // Core modules
+    implementation(project(":common-navigation"))
+
     // Kotlin
     compileOnly(Libs.kotlin)
 

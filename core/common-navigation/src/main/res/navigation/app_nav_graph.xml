@@ -7,8 +7,7 @@
 
     <fragment
         android:id="@+id/SplashFragment"
-        android:name="com.aaglobal.jnc_playground.ui.splash.SplashFragment"
-        tools:layout="@layout/fragment_splash">
+        android:name="com.aaglobal.jnc_playground.ui.splash.SplashFragment">
 
         <action
             android:id="@+id/action__SplashFragment__to__MainFragment"
@@ -26,8 +25,7 @@
 
     <fragment
         android:id="@+id/MainFragment"
-        android:name="com.aaglobal.jnc_playground.ui.main.MainFragment"
-        tools:layout="@layout/fragment_main">
+        android:name="com.aaglobal.jnc_playground.ui.main.MainFragment">
 
         <action
             android:id="@+id/action__MainFragment__to__AuthFlow"

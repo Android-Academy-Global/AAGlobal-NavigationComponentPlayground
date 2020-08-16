@@ -5,14 +5,11 @@
     android:id="@+id/company_flow__nav_graph"
     app:startDestination="@id/CompanyFragment">
 
+    <!-- Even :common-navigation doesn't know anything about
+    fragments and destinations, it can build graph -->
     <fragment
         android:id="@+id/CompanyFragment"
-        android:name="com.aaglobal.jnc_playground.company.CompanyFragment"
-        android:label="@string/fragment_company__title"
-        tools:layout="@layout/fragment_company">
-
-        <!-- Define deep link for other features -->
-        <deepLink app:uri="companyflow://company" />
+        android:name="com.aaglobal.jnc_playground.company.CompanyFragment">
 
         <action
             android:id="@+id/action__CompanyFragment__to__CompanyDetailsFragment"
@@ -22,9 +19,7 @@
 
     <fragment
         android:id="@+id/CompanyDetailsFragment"
-        android:name="com.aaglobal.jnc_playground.company.CompanyDetailsFragment"
-        android:label="@string/fragment_company_details__title"
-        tools:layout="@layout/fragment_company_details">
+        android:name="com.aaglobal.jnc_playground.company.CompanyDetailsFragment">
 
         <!-- We can use this action for back navigation, but it seems that it is -->
         <!-- not semantically right to use "navigate" word when you return to some screen -->

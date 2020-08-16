@@ -36,9 +36,7 @@ class VacancyFragment : Fragment(R.layout.fragment_vacancy) {
         }
 
         fragment_vacancy__button__open_company_flow.setOnClickListener {
-            // Navigation through deep link
-            val companyFlowUri = "companyflow://company".toUri()
-            findNavController().navigate(companyFlowUri)
+            findNavController().navigate(R.id.action__VacancyFragment__to__CompanyFlow)
         }
     }
 
