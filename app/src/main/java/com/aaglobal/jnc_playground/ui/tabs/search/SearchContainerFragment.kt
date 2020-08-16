@@ -5,8 +5,11 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.aaglobal.jnc_playground.R
+import com.aaglobal.jnc_playground.company.CompanyDetailsFragment.Companion.COMPANY_FLOW_RESULT_FLAG
+import com.aaglobal.jnc_playground.company.di.CompanyDI
+import com.aaglobal.jnc_playground.company.routing.CompanyFragmentDetailsRouterSource
+import com.aaglobal.jnc_playground.company.routing.CompanyFragmentRouterSource
 import com.aaglobal.jnc_playground.core.utils.addFragmentLossIfNotExist
-import com.aaglobal.jnc_playground.company.CompanyDetailsFragment
 import com.aaglobal.jnc_playground.ui.vacancy.VacancyFragmentArgs
 import com.aaglobal.jnc_playground.ui.vacancy_list.VacancyListFragment
 import com.aaglobal.jnc_playground.ui.vacancy_list.VacancyListRouterSource
@@ -22,12 +25,15 @@ class SearchContainerFragment : Fragment(R.layout.fragment_search_container) {
         // Read result from nested navigation flow
         val companyFlowResult = findNavController().currentBackStackEntry
             ?.savedStateHandle
-            ?.remove<Boolean>(CompanyDetailsFragment.COMPANY_FLOW_RESULT_FLAG)
+            ?.remove<Boolean>(COMPANY_FLOW_RESULT_FLAG)
         fragment_search_container__text__company_flow_result.text = getString(
             R.string.fragment_search_container__company_flow_result, companyFlowResult?.toString()
         )
 
         fragment_search_container__button__open_company_flow.setOnClickListener {
+            // We need to init interfaces for routing
+            initCompanyDI()
+            // And only after that we can go into module navigation
             findNavController().navigate(R.id.action__SearchContainerFragment__to__CompanyFlow)
         }
 
@@ -51,6 +57,25 @@ class SearchContainerFragment : Fragment(R.layout.fragment_search_container) {
                 }
             )
         )
+    }
+
+
+    private fun initCompanyDI() {
+        CompanyDI.companyFragmentRouterSource = object : CompanyFragmentRouterSource {
+            override fun moveToCompanyDetails() {
+                findNavController().navigate(R.id.action__CompanyFragment__to__CompanyDetailsFragment)
+            }
+        }
+        CompanyDI.companyFragmentDetailsRouterSource = object : CompanyFragmentDetailsRouterSource {
+            override fun finishCompanyFlow(flowResult: Boolean) {
+                // Here we are inside nested navigation flow
+                findNavController().popBackStack(R.id.company_flow__nav_graph, true)
+
+                // At this line, "findNavController().currentBackStackEntry" means screen that STARTED current nested flow.
+                // So we can send result!
+                findNavController().currentBackStackEntry?.savedStateHandle?.set(COMPANY_FLOW_RESULT_FLAG, true)
+            }
+        }
     }
 
 }
