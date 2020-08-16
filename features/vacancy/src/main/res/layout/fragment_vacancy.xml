@@ -7,7 +7,7 @@
 
     <TextView
         android:id="@+id/fragment_vacancy__text__title"
-        style="@style/LargeTitle"
+        style="@style/LargeTitle_inner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -21,10 +21,21 @@
         android:id="@+id/fragment_vacancy__button__next_vacancy"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/dp20"
+        android:layout_margin="@dimen/dp20_inner"
         android:text="@string/fragment_vacancy__open_next_vacancy"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/fragment_vacancy__text__title" />
+
+    <Button
+        android:id="@+id/fragment_vacancy__button__open_company_flow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp20_inner"
+        android:backgroundTint="@color/teal_700_inner"
+        android:text="@string/fragment_vacancy__open_company_flow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragment_vacancy__button__next_vacancy" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

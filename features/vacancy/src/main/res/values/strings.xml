@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- region Fragment <Vacancy> -->
+    <string name="fragment_vacancy__title">Vacancy [id: %1$s]</string>
+    <string name="fragment_vacancy__open_next_vacancy">Open next vacancy</string>
+    <string name="fragment_vacancy__open_company_flow">Open company flow</string>
+    <!-- endregion -->
+
+</resources>

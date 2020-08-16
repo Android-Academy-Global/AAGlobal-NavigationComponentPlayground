@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/VacancyFragment"
-        android:name="com.aaglobal.jnc_playground.ui.vacancy.VacancyFragment"
+        android:name="com.aaglobal.jnc_playground.vacancy.VacancyFragment"
         android:label="Fragment vacancy"
         tools:layout="@layout/fragment_vacancy">
 
@@ -20,6 +20,12 @@
             android:id="@+id/action__VacancyFragment__to__VacancyFragment"
             app:destination="@id/VacancyFragment" />
 
+        <action
+            android:id="@+id/action__VacancyFragment__to__CompanyFlow"
+            app:destination="@id/company_flow__nav_graph" />
+
     </fragment>
+
+    <include app:graph="@navigation/company_flow__nav_graph" />
 
 </navigation>

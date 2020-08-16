@@ -36,8 +36,6 @@
 
     <!-- endregion -->
 
-
-
     <!-- region Auth flow -->
     <string name="fragment_start_auth__title">Start auth</string>
     <string name="fragment_start_auth__open_next_screen">Open next auth screen</string>
@@ -47,9 +45,6 @@
     <!-- endregion -->
 
     <!-- region Fragment <Vacancy> -->
-    <string name="fragment_vacancy__title">Vacancy [id: %1$s]</string>
-    <string name="fragment_vacancy__open_next_vacancy">Open next vacancy</string>
-
     <string name="fragment_vacancy_list__item__name">%1$s | id: %2$s</string>
     <!-- endregion -->
 

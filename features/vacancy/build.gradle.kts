@@ -1,9 +1,7 @@
 plugins {
-    id("com.android.application")
+    id("com.android.library")
     kotlin("android")
     kotlin("android.extensions")
-    kotlin("kapt")
-    id("androidx.navigation.safeargs.kotlin")
 }
 
 repositories {
@@ -19,7 +17,6 @@ android {
         minSdkVersion(Versions.minSdkVersion)
         targetSdkVersion(Versions.targetSdkVersion)
 
-        applicationId = "com.aaglobal.jnc_playground"
         versionCode = 1
         versionName = "1.0"
 
@@ -47,27 +44,19 @@ androidExtensions {
 
 dependencies {
     // Kotlin
-    implementation(Libs.kotlin)
+    compileOnly(Libs.kotlin)
 
     // AndroidX
-    implementation(Libs.androidX.coreKtx)
-    implementation(Libs.androidX.appCompat)
+    compileOnly(Libs.androidX.coreKtx)
+    compileOnly(Libs.androidX.appCompat)
 
     // UI libraries
-    implementation(Libs.ui.materialComponents)
-    implementation(Libs.androidX.constraintLayout)
+    compileOnly(Libs.ui.materialComponents)
+    compileOnly(Libs.androidX.constraintLayout)
 
     // Navigation
-    implementation(Libs.jetpack.navigationComponentFragmentKtx)
-    implementation(Libs.jetpack.navigationComponentUiKtx)
-    implementation(Libs.ui.adapterDelegateKotlinDsl)
-    implementation(Libs.ui.adapterDelegateKotlinDslLayoutContainer)
-
-    // Feature modules
-    implementation(project(":company"))
-    implementation(project(":vacancy"))
-
-    testImplementation(Libs.test.junit)
-    androidTestImplementation(Libs.test.junitExt)
-    androidTestImplementation(Libs.test.espresso)
+    compileOnly(Libs.jetpack.navigationComponentFragmentKtx)
+    compileOnly(Libs.jetpack.navigationComponentUiKtx)
+    compileOnly(Libs.ui.adapterDelegateKotlinDsl)
+    compileOnly(Libs.ui.adapterDelegateKotlinDslLayoutContainer)
 }
