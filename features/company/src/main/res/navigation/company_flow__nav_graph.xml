@@ -11,6 +11,9 @@
         android:label="@string/fragment_company__title"
         tools:layout="@layout/fragment_company">
 
+        <!-- Define deep link for other features -->
+        <deepLink app:uri="companyflow://company" />
+
         <action
             android:id="@+id/action__CompanyFragment__to__CompanyDetailsFragment"
             app:destination="@id/CompanyDetailsFragment" />

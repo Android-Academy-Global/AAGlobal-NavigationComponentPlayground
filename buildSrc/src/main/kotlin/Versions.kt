@@ -8,7 +8,7 @@ object Versions {
 }
 
 object GradlePlugins {
-    private const val androidBuildToolsVersion = "4.1.0-beta05"
+    private const val androidBuildToolsVersion = "4.1.0-rc01"
 
     const val kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}"
     const val androidBuildTools = "com.android.tools.build:gradle:$androidBuildToolsVersion"

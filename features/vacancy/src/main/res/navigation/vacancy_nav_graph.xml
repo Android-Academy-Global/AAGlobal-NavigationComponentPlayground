@@ -16,16 +16,13 @@
             app:argType="string"
             app:nullable="false" />
 
+        <!-- Define deep links for navigation from other features -->
+        <deepLink app:uri="vacancyFlow://openScreen/{vacancyId}" />
+
         <action
             android:id="@+id/action__VacancyFragment__to__VacancyFragment"
             app:destination="@id/VacancyFragment" />
 
-        <action
-            android:id="@+id/action__VacancyFragment__to__CompanyFlow"
-            app:destination="@id/company_flow__nav_graph" />
-
     </fragment>
-
-    <include app:graph="@navigation/company_flow__nav_graph" />
 
 </navigation>

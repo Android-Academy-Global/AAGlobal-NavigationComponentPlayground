@@ -7,7 +7,6 @@ import androidx.navigation.fragment.findNavController
 import com.aaglobal.jnc_playground.R
 import com.aaglobal.jnc_playground.company.CompanyDetailsFragment.Companion.COMPANY_FLOW_RESULT_FLAG
 import com.aaglobal.jnc_playground.core.utils.addFragmentLossIfNotExist
-import com.aaglobal.jnc_playground.di.GlobalDI
 import com.aaglobal.jnc_playground.ui.vacancy_list.VacancyListFragment
 import com.aaglobal.jnc_playground.ui.vacancy_list.VacancyListRouterSource
 import com.aaglobal.jnc_playground.ui.vacancy_list.adapter.VacancyItem
@@ -29,9 +28,6 @@ class SearchContainerFragment : Fragment(R.layout.fragment_search_container) {
         )
 
         fragment_search_container__button__open_company_flow.setOnClickListener {
-            // We need to init interfaces for routing
-            GlobalDI.initCompanyDI(findNavController())
-            // And only after that we can go into module navigation
             findNavController().navigate(R.id.action__SearchContainerFragment__to__CompanyFlow)
         }
 
@@ -47,8 +43,6 @@ class SearchContainerFragment : Fragment(R.layout.fragment_search_container) {
                 vacancyType = "search_container",
                 vacancyListRouterSource = object : VacancyListRouterSource {
                     override fun navigateToVacancyScreen(item: VacancyItem) {
-                        GlobalDI.initVacancyDI(findNavController())
-
                         findNavController().navigate(
                             R.id.action__SearchContainerFragment__to__VacancyFragment,
                             VacancyFragmentArgs(vacancyId = "${item.name}|${item.id}").toBundle()

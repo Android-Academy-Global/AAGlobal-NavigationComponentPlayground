@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.aaglobal.jnc_playground.R
 import com.aaglobal.jnc_playground.core.utils.addFragmentLossIfNotExist
-import com.aaglobal.jnc_playground.di.GlobalDI
 import com.aaglobal.jnc_playground.ui.vacancy_list.VacancyListFragment
 import com.aaglobal.jnc_playground.ui.vacancy_list.VacancyListRouterSource
 import com.aaglobal.jnc_playground.ui.vacancy_list.adapter.VacancyItem
@@ -34,8 +33,6 @@ class FavoritesContainerFragment : Fragment(R.layout.fragment_favorites_containe
                 vacancyType = "favorites_container",
                 vacancyListRouterSource = object : VacancyListRouterSource {
                     override fun navigateToVacancyScreen(item: VacancyItem) {
-                        GlobalDI.initVacancyDI(findNavController())
-
                         findNavController().navigate(
                             R.id.action__FavoritesContainerFragment__to__VacancyFragment,
                             VacancyFragmentArgs(vacancyId = "${item.name}|${item.id}").toBundle()
