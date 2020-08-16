@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.aaglobal.jnc_playground.R
@@ -16,6 +17,7 @@ class FinishAuthFragment : Fragment(R.layout.fragment_finish_auth) {
         const val AUTH_FLOW_RESULT_KEY = "auth_flow_result"
     }
 
+    private val finishAuthViewModel: FinishAuthViewModel by viewModels()
 
     private var callback: OnBackPressedCallback? = null
 
@@ -23,11 +25,16 @@ class FinishAuthFragment : Fragment(R.layout.fragment_finish_auth) {
         super.onViewCreated(view, savedInstanceState)
 
         fragment_finish_auth__button.setOnClickListener {
+            // Save hasAuthData flag in prefs
+            finishAuthViewModel.setFinishAuthFlag()
+
+            // Navigate back from auth flow
             Navigation.findNavController(
                 requireActivity(),
                 R.id.activity_root__fragment__nav_host
             ).popBackStack(R.id.auth__nav_graph, true)
 
+            // Send signal about finishing flow
             findNavController().currentBackStackEntry?.savedStateHandle?.set(AUTH_FLOW_RESULT_KEY, true)
         }
 

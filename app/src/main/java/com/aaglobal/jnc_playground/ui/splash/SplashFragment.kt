@@ -7,6 +7,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.aaglobal.jnc_playground.R
+import com.aaglobal.jnc_playground.ui.auth.FinishAuthFragment
 import com.aaglobal.jnc_playground.ui.auth.StartAuthFragmentArgs
 
 
@@ -17,6 +18,15 @@ class SplashFragment : Fragment(R.layout.fragment_splash) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val authResult = findNavController().currentBackStackEntry
+            ?.savedStateHandle
+            ?.remove<Boolean>(FinishAuthFragment.AUTH_FLOW_RESULT_KEY) == true
+
+        if (authResult) {
+            navigateToMainScreen()
+            return
+        }
 
         // Navigate with SingleLiveEvent from Splash screen
         splashViewModel.splashNavCommand.observe(viewLifecycleOwner, Observer { splashNavCommand ->
