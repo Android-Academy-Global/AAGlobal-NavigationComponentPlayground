@@ -7,15 +7,20 @@
 
     <fragment
         android:id="@+id/SearchContainerFragment"
-        tools:layout="@layout/fragment_search_container"
-        android:name="com.aaglobal.jnc_playground.ui.tabs.search.SearchContainerFragment">
+        android:name="com.aaglobal.jnc_playground.ui.tabs.search.SearchContainerFragment"
+        tools:layout="@layout/fragment_search_container">
 
         <action
             android:id="@+id/action__SearchContainerFragment__to__CompanyFlow"
             app:destination="@id/company_flow__nav_graph" />
 
+        <action
+            android:id="@+id/action__SearchContainerFragment__to__VacancyFragment"
+            app:destination="@id/vacancy_nav_graph" />
+
     </fragment>
 
     <include app:graph="@navigation/company_flow__nav_graph" />
+    <include app:graph="@navigation/vacancy_nav_graph" />
 
 </navigation>

@@ -10,6 +10,12 @@
         android:name="com.aaglobal.jnc_playground.ui.tabs.favorites.FavoritesContainerFragment"
         tools:layout="@layout/fragment_favorites_container">
 
+        <action
+            android:id="@+id/action__FavoritesContainerFragment__to__VacancyFragment"
+            app:destination="@id/vacancy_nav_graph" />
+
     </fragment>
+
+    <include app:graph="@navigation/vacancy_nav_graph" />
 
 </navigation>
