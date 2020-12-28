@@ -44,6 +44,7 @@
 
     </dialog>
 
+    <include app:graph="@navigation/company_flow__nav_graph" />
     <include app:graph="@navigation/vacancy_nav_graph" />
 
 </navigation>
