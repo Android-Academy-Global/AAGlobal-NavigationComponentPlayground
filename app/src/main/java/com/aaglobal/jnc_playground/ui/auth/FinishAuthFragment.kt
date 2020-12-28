@@ -19,8 +19,6 @@ class FinishAuthFragment : Fragment(R.layout.fragment_finish_auth) {
 
     private val finishAuthViewModel: FinishAuthViewModel by viewModels()
 
-    private var callback: OnBackPressedCallback? = null
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -37,22 +35,6 @@ class FinishAuthFragment : Fragment(R.layout.fragment_finish_auth) {
             // Send signal about finishing flow
             findNavController().currentBackStackEntry?.savedStateHandle?.set(AUTH_FLOW_RESULT_KEY, true)
         }
-
-        callback = object : OnBackPressedCallback(true) {
-            override fun handleOnBackPressed() {
-                Navigation.findNavController(
-                    requireActivity(),
-                    R.id.activity_root__fragment__nav_host
-                ).popBackStack()
-            }
-        }.also {
-            requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, it)
-        }
-    }
-
-    override fun onDestroyView() {
-        callback?.remove()
-        super.onDestroyView()
     }
 
 }

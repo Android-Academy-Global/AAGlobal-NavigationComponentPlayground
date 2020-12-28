@@ -187,7 +187,6 @@ private fun detachNavHostFragment(
     fragmentManager: FragmentManager,
     navHostFragment: NavHostFragment
 ) {
-    // We don't need Handler().post {} here anymore because we wrap all of bottom navigation setup logic into Handler().post { }
     fragmentManager.beginTransaction()
         .detach(navHostFragment)
         .commitNow()
@@ -198,7 +197,6 @@ private fun attachNavHostFragment(
     navHostFragment: NavHostFragment,
     isPrimaryNavFragment: Boolean
 ) {
-    // We don't need Handler().post {} here anymore because we wrap all of bottom navigation setup logic into Handler().post { }
     fragmentManager.beginTransaction()
         .attach(navHostFragment)
         .apply {
